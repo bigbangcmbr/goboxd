@@ -1,3 +1,15 @@
+# Architecture Decision Records
+
+## Load Testing and Benchmarking Library
+
+**Context**: Choosing a HTTP load testing library
+
+**Options considered:**
+
+**Decision:**
+
+**Rationale:**
+
 ## [Short decision title]
 
 **Context:**
