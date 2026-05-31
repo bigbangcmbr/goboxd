@@ -26,4 +26,31 @@ my-project/
     └── cli/
         └── main.go  (package main - builds the CLI tool)
 ```
+
 This layout is followed in the current repo which has `cmd/goboxd/main.go`.
+
+## 2026-05-31 Testing in Go
+
+**Prompt**:
+Explain how testing in Go works and it's conventions.
+
+**Response Summary**:
+In Go, you must follow three strict naming conventions:
+
+- File names: must end in `_test.go`
+- Function names: Must start with `Test` followed by a capitalized letter (eg. `TestCalculate`)
+- Signature: Must accept a single point parameter: `t *Testing.T`)
+
+### Table Driven Tests
+
+Go developers prefer **table-driven tests**. Instead of running a function per test case, you create a slice of anonymous structs (the "table") and loop over them using `t.Run()` to create subtests.
+
+### Useful CLI Commands
+
+| Command | Description |
+| :-- | :-- |
+| `go test`|Runs all tests in the current directory.|
+| `go test ./...`|Runs all tests in the current directory and all subdirectories.|
+| `go test -v`|Verbose mode: Displays explicit details for every running test and subtest.|
+| `go test -run=TestAdd`|"Runs only tests matching the specified regex pattern (e.g., TestAdd)."|
+
